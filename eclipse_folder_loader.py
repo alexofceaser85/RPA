@@ -7,15 +7,25 @@ __version__ = "Southwire Hackathon"
 
 
 def open_eclipse():
-    pyautogui.press('win')
-    pyautogui.typewrite("eclipse")
-    pyautogui.press("enter")
+    eclipse_taskbar_location = pyautogui.locateOnScreen("images/Eclipse.png", confidence=.7)
+    pyautogui.moveTo(eclipse_taskbar_location[0] + 15, eclipse_taskbar_location[1] + 5)
+    pyautogui.click()
 
 def load_files(file_location):
-    return ""
+    is_eclipse_open = False
+    while not is_eclipse_open:
+        if (pyautogui.locateOnScreen("images/File_Menu_Text.png") != None):
+            is_eclipse_open = True
+    print("reached")
+    pyautogui.press("alt")
+    pyautogui.press("f")
+    for x in range(15):
+        pyautogui.press("down")
+    pyautogui.click()
     
 def main():
-    print("Hello World")    
+    open_eclipse() 
+    load_files("")
 
 if __name__ == "__main__":
     main()
