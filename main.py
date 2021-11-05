@@ -1,5 +1,4 @@
 import pyautogui
+import Names.names
 
-pyautogui.press('win')
-pyautogui.typewrite("eclipse")
-pyautogui.press("enter")
+Names.names.check_file_names("C:\\Users\\alexd\\OneDrive\\Desktop\\New folder", "LabOne")
