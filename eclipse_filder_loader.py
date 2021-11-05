@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 
-__author__ = "Team Chad"
+import pyautogui
+
+__author__ = "Alexander Ayers"
 __version__ = "Southwire Hackathon"
 
+
+pyautogui.press('win')
+pyautogui.typewrite("eclipse")
+pyautogui.press("enter")
 
 def main():
     print("Hello World")
